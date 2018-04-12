@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/charts/line/index",
+    "pages/charts/area/index",
+    "pages/charts/bar/index",
+    "pages/charts/column/index",
+    "pages/charts/dodge/index",
+    "pages/charts/stackBar/index",
+    "pages/charts/pie/index",
+    "pages/charts/ring/index",
+    "pages/charts/rose/index",
+    "pages/charts/radar/index",
+    "pages/charts/gauge/index",
+    "pages/charts/double-axis/index",
+    "pages/charts/multiCharts/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#eee",
+    "navigationBarBackgroundColor": "#eee",
+    "navigationBarTitleText": "AntV-F2 图表示例",
+    "navigationBarTextStyle": "black"
+  }
+}

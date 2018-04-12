@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <ff-canvas id="dodge-dom" canvas-id="dodge" opts="{{ opts }}"></ff-canvas>
+</view>

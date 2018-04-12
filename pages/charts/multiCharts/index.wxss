@@ -1,0 +1,7 @@
+#multi-bar-dom {
+  height: 250px;
+}
+
+#multi-scatter-dom {
+  height: 250px;  
+}

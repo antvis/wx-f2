@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <ff-canvas id="stack-dom" canvas-id="stack" opts="{{ opts }}"></ff-canvas>
+</view>

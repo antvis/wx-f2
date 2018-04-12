@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <ff-canvas id="guage-dom" canvas-id="guage" opts="{{ opts }}"></ff-canvas>
+</view>
