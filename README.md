@@ -59,6 +59,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
   各个文件的内容如下：
 
   + `index.json` 配置文件，引入 f2-canvas 组件，这里需要注意路径要正确，由于微信小程序组件名不允许包含数字，所以这里将其命名为 ff-canvas
+  
   ```js
   // index.json
   {
@@ -134,7 +135,9 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
   ```
 
 
-  由于 f2-canvas 组件主要是对小程序的画布上下文和 html5 canvas 的上下文进行了适配以支持 F2 在小程序端的渲染，所以 F2 能绘制什么图表，小程序端就能绘制什么，使用时也只需按照 F2 的语法来写即可。本项目只展示了部分 demos，更全的见 [AntV F2](https://antv.alipay.com/zh-cn/f2/3.x/demo/index.html)。
+  由于 f2-canvas 组件主要是对小程序的画布上下文和 html5 canvas 的上下文进行了适配以支持 F2 在小程序端的渲染，所以 **F2 能绘制什么图表，小程序端就能绘制什么图表**，使用时也只需按照 F2 的语法来写即可。
+  
+  本项目只展示了部分 demos，更全的见 [AntV F2](https://antv.alipay.com/zh-cn/f2/3.x/demo/index.html)。
 
   需要注意的是，在创建 chart 的时候，需要使用 'el' 属性来指定容器，对应 `this.data.opts.onInit` 方法形参中的 `canvas` 属性，另外该方法还会返回 `width`, `height` 属性分别对应画布的宽和高。
 
