@@ -7,7 +7,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
 * 微信扫码体验
 
-【小程序审核中...】等着吧
+<img src="https://gw.alipayobjects.com/zos/rmsportal/wmRJtPHkkoimGbPCeScc.jpg" width="344">
 
 * 使用微信开发者工具打开此项目
 
