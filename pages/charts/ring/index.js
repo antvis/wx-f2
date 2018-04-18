@@ -84,6 +84,7 @@ function initChart(canvas, width, height) {
     offsetY: -5,
     marker: 'square',
     align: 'center',
+    itemMarginBottom: 20,
     onClick(ev) {
       const { clickedItem } = ev;
       const dataValue = clickedItem.get('dataValue');
@@ -182,6 +183,14 @@ function initChart(canvas, width, height) {
 }
 
 Page({
+  onShareAppMessage: function (res) {
+    return {
+      title: 'F2 微信小程序图表组件，你值得拥有~',
+      path: '/pages/index/index',
+      success: function () { },
+      fail: function () { }
+    }
+  },
   data: {
     opts: {
       onInit: initChart

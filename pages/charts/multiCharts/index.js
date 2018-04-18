@@ -1,6 +1,14 @@
 import F2 from '../../../f2-canvas/lib/f2';
 
 Page({
+  onShareAppMessage: function (res) {
+    return {
+      title: 'F2 微信小程序图表组件，你值得拥有~',
+      path: '/pages/index/index',
+      success: function () { },
+      fail: function () { }
+    }
+  },
   data: {
     drawBar: {
       onInit: function (canvas, width, height) {
@@ -181,6 +189,40 @@ Page({
         });
         chart.render();
         return chart;
+      }
+    },
+
+    drawRadial: {
+      onInit: function (canvas, width, height) {
+        const data = [
+          { tem: 6.9, city: 'Tokyo' },
+          { tem: 11.3, city: 'New York' },
+          { tem: 13.5, city: 'Berlin' },
+          { tem: 17, city: 'London' },
+          { tem: 18.6, city: 'Beijing' }
+        ];
+        const chart = new F2.Chart({
+          el: canvas,
+          width,
+          height
+        });
+        chart.coord('polar', {
+          transposed: true,
+          endAngle: Math.PI
+        });
+
+        chart.source(data);
+        chart.axis('city', {
+          grid: null,
+          line: null
+        });
+        chart.axis('tem', false);
+        chart.legend({
+          position: 'right'
+        });
+        chart.interval().position('city*tem').
+          color('city');
+        chart.render();
       }
     }
   },

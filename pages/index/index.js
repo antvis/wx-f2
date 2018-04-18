@@ -12,7 +12,7 @@ Page({
       { name: 'radar', value: '雷达图' },
       { name: 'gauge', value: '仪表盘' },
       { name: 'double-axis', value: '双 Y 轴' },
-      { name: 'multiCharts', value: '多图表' }
+      { name: 'multiCharts', value: '多图表好性能' }
     ]
   },
   gotoPage: function (e) {

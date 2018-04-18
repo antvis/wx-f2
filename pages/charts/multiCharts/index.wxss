@@ -1,7 +1,11 @@
 #multi-bar-dom {
-  height: 250px;
+  height: 33%;
 }
 
 #multi-scatter-dom {
-  height: 250px;  
+  height: 33%;  
+}
+
+#multi-radial-dom {
+  height: 33%;  
 }
