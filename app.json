@@ -13,7 +13,8 @@
     "pages/charts/radar/index",
     "pages/charts/gauge/index",
     "pages/charts/double-axis/index",
-    "pages/charts/multiCharts/index"
+    "pages/charts/multiCharts/index",
+    "pages/charts/k/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

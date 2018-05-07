@@ -4,89 +4,74 @@ let chart = null;
 
 function initChart(canvas, width, height) {
   const data = [
-    { item: 'Design', user: '用户 A', score: 70 },
-    { item: 'Design', user: '用户 B', score: 30 },
-    { item: 'Development', user: '用户 A', score: 60 },
-    { item: 'Development', user: '用户 B', score: 70 },
-    { item: 'Marketing', user: '用户 A', score: 50 },
-    { item: 'Marketing', user: '用户 B', score: 60 },
-    { item: 'Users', user: '用户 A', score: 40 },
-    { item: 'Users', user: '用户 B', score: 50 },
-    { item: 'Test', user: '用户 A', score: 60 },
-    { item: 'Test', user: '用户 B', score: 70 },
-    { item: 'Language', user: '用户 A', score: 70 },
-    { item: 'Language', user: '用户 B', score: 50 },
-    { item: 'Technology', user: '用户 A', score: 70 },
-    { item: 'Technology', user: '用户 B', score: 40 },
-    { item: 'Support', user: '用户 A', score: 60 },
-    { item: 'Support', user: '用户 B', score: 40 }
+    { name: '超大盘能力', value: 6.5 },
+    { name: '抗跌能力', value: 9.5 },
+    { name: '稳定能力', value: 9 },
+    { name: '绝对收益能力', value: 6 },
+    { name: '选证择时能力', value: 6 },
+    { name: '风险回报能力', value: 8 }
   ];
-  chart = new F2.Chart({
+
+  const chart = new F2.Chart({
     el: canvas,
     width,
     height
   });
 
-  chart.coord('polar');
   chart.source(data, {
-    score: {
+    value: {
       min: 0,
-      max: 120,
-      nice: false,
-      tickCount: 4
+      max: 10
     }
   });
-  chart.legend({
-    align: 'center'
-  });
-  chart.tooltip({
-    custom: true, // 自定义 tooltip 内容框
-    onChange(obj) {
-      const legend = chart.get('legendController').legends.top[0];
-      const tooltipItems = obj.items;
-      const legendItems = legend.items;
-      const map = {};
-      legendItems.map(item => {
-        map[item.name] = Object.assign({}, item);
-      });
-      tooltipItems.map(item => {
-        const { name, value } = item;
-        if (map[name]) {
-          map[name].value = value;
-        }
-      });
-      legend.setItems(Object.values(map));
+  chart.coord('polar');
+  chart.tooltip(false); // 关闭 tooltip
+  chart.axis('value', {
+    grid: {
+      lineDash: null
     },
-    onHide() {
-      const legend = chart.get('legendController').legends.top[0];
-      legend.setItems(chart.getLegendItems().country);
+    label: null,
+    line: null
+  });
+  chart.axis('name', {
+    grid: {
+      lineDash: null
     }
   });
-  chart.axis('score', {
-    label(text, index, total) {
-      if (index === total - 1) {
-        return null;
+  chart.area()
+    .position('name*value')
+    .color('#FE5C5B')
+    .style({
+      fillOpacity: 0.2
+    })
+    .animate({
+      appear: {
+        animation: 'groupWaveIn'
       }
-      return {
-        top: true
-      };
-    },
-    grid(text) {
-      if (text === '120') {
-        return {
-          lineDash: null
-        };
+    });
+  chart.line()
+    .position('name*value')
+    .color('#FE5C5B')
+    .size(1)
+    .animate({
+      appear: {
+        animation: 'groupWaveIn'
       }
-    },
-    line: {
-      top: false
+    });
+  chart.point().position('name*value').color('#FE5C5B').animate({
+    appear: {
+      delay: 300
     }
   });
-  chart.area().position('item*score').color('user');
-  chart.line().position('item*score').color('user');
-  chart.point().position('item*score').color('user').style({
-    stroke: '#fff',
-    lineWidth: 1
+
+  chart.guide().text({
+    position: ['50%', '50%'],
+    content: '73',
+    style: {
+      fontSize: 32,
+      fontWeight: 'bold',
+      fill: '#FE5C5B'
+    }
   });
   chart.render();
   return chart;
