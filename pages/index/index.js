@@ -4,6 +4,7 @@ Page({
       { name: 'line', value: '折线图' },
       { name: 'area', value: '区域图' },
       { name: 'column', value: '柱状图' },
+      { name: 'bar', value: '条形图' },
       { name: 'dodge', value: '分组柱状图' },
       { name: 'stackBar', value: '层叠条形图' },
       { name: 'ring', value: '环图' },
