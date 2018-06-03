@@ -14,7 +14,9 @@
     "pages/charts/gauge/index",
     "pages/charts/double-axis/index",
     "pages/charts/multiCharts/index",
-    "pages/charts/k/index"
+    "pages/charts/k/index",
+    "pages/charts/stack-area/index",
+    "pages/charts/radial-bar/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

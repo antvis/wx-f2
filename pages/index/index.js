@@ -1,6 +1,7 @@
 Page({
   data: {
     charts: [
+      { name: 'radial-bar', value: 'iwatch健康记录' },      
       { name: 'line', value: '折线图' },
       { name: 'area', value: '区域图' },
       { name: 'column', value: '柱状图' },
@@ -13,8 +14,9 @@ Page({
       { name: 'radar', value: '雷达图' },
       { name: 'gauge', value: '仪表盘' },
       { name: 'double-axis', value: '双 Y 轴' },
-      { name: 'multiCharts', value: '多图表好性能' },
-      { name: 'k', value: 'K 线图(异步获取数据)' }
+      { name: 'k', value: 'K 线图(异步获取数据)' },
+      { name: 'stack-area', value: '层叠区域图' },
+      { name: 'multiCharts', value: '多图表好性能' }
     ]
   },
   gotoPage: function (e) {

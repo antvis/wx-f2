@@ -1,0 +1,8 @@
+/* pages/chart/line/index.wxss */
+.container {
+    margin: 0 auto;
+    background-color: #151515;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px 0px #06060d;
+    padding: 50px;
+}

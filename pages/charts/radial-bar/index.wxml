@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <ff-canvas id="radialBar-dom" canvas-id="radialBar" opts="{{ opts }}"></ff-canvas>
+</view>
