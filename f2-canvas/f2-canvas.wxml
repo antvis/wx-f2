@@ -1,10 +1,10 @@
-<canvas 
-class="f2-canvas" 
+<canvas
+class="f2-canvas"
 canvas-id="{{ canvasId }}"
-disable-scroll="{{true}}"
+disable-scroll="{{opt.disableTouch}}"
 bindinit="init"
-bindtouchstart="touchStart" 
-bindtouchmove="touchMove" 
-bindtouchend="touchEnd"
+bindtouchstart="{{opt.disableTouch ? '' : touchStart}}"
+bindtouchmove="{{opt.disableTouch ? '' : touchMove}}"
+bindtouchend="{{opt.disableTouch ? '' : touchEnd}}"
 >
 </canvas>
