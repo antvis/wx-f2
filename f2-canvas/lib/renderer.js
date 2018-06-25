@@ -1,18 +1,9 @@
 import EventEmitter from './EventEmitter.min.js'
 
 const CAPITALIZED_ATTRS_MAP = {
-  fillStyle: 'FillStyle',
   fontSize: 'FontSize',
-  globalAlpha: 'GlobalAlpha',  
   opacity: 'GlobalAlpha',
-  lineCap: 'LineCap',
-  lineJoin: 'LineJoin',
-  lineWidth: 'LineWidth',
-  lineDash: 'LineDash',
-  miterLimit: 'MiterLimit',
-  strokeStyle: 'StrokeStyle',
-  //textAlign: 'TextAlign',
-  textBaseline: 'TextBaseline'
+  lineDash: 'LineDash'
 };
 
 export default class Renderer extends EventEmitter {
