@@ -17,6 +17,12 @@ Page({
       { name: 'k', value: 'K 线图(异步获取数据)' },
       { name: 'stack-area', value: '层叠区域图' },
       { name: 'multiCharts', value: '多图表好性能' }
+    ],
+    interactions: [
+      { name: 'scroll-line', value: '线图平移交互(长按展示 tooltip)' },
+      { name: 'steps-pan', value: '每日步数（柱状图平移）' },
+      { name: 'pie-select', value: '饼图选中交互' },
+      { name: 'column-select', value: '柱状图选中交互(可取消选中)' }
     ]
   },
   gotoPage: function (e) {

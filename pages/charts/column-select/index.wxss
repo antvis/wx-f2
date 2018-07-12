@@ -1,0 +1,7 @@
+/* pages/chart/line/index.wxss */
+
+text {
+  position: absolute;
+  top: 10rpx;
+  color: crimson
+}

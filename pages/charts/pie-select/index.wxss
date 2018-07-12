@@ -1,0 +1,6 @@
+/* pages/chart/line/index.wxss */
+
+text {
+  position: absolute;
+  top: 80rpx;
+}
