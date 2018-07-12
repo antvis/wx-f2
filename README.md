@@ -2,6 +2,11 @@
 
 F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2/3.x/index.html) 的所有功能，欢迎使用反馈。
 
+## work in progress
+
+敬请期待！~
+
+- [ ] 丰富的图表交互支持： https://github.com/antvis/wx-f2/pull/44
 
 ## 快速体验
 
