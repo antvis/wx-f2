@@ -33,6 +33,10 @@ function initChart(canvas, width, height) {
       stroke: '#000',
       lineWidth: 1
     },
+    selectAxisStyle: {
+      stroke: '#000',
+      fontWeight: 'normal'
+    }
     // unSelectStyle:null
   });
 
