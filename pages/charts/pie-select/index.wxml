@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+  <text>{{ message }}</text>  
+  <ff-canvas id="pieSelect" canvas-id="pieSelect" opts="{{ opts }}"></ff-canvas>
+</view>
