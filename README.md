@@ -21,17 +21,18 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 以下是目录结构说明：
 
 ```bash
-├── f2-canvas                    // f2-canvas 组件        
+├── f2-canvas                    // f2-canvas 组件
 │   ├── f2-canvas.js
 │   ├── f2-canvas.json
 │   ├── f2-canvas.wxml
 │   ├── f2-canvas.wxss
+│   ├── interaction              // f2 封装的图表交互模块
 │   └── lib                      // f2-canvas 组件依赖的类库
 │       ├── EventEmitter.min.js  // 事件发射器，用于监听、触发事件， 3.1K
 │       ├── f2.js                // f2 脚本（压缩），155K
 │       └── renderer.js          // f2 专为适配微信小程序绘图上下文 context 而封装的伪 Canvas
 ├── pages                        // f2-canvas 组件使用示例
-│   
+│  
 ```
 
 ## 下载
@@ -40,7 +41,11 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
 **注意**
 
-`/f2-canvas/lib/` 目录下的 f2.js 文件默认我们会保证它始终为 [F2](https://github.com/antvis/f2/releases) 最新稳定版。如有必要，也可以由用户自己编译（如要使用 F2 的按需加载）替换。
+当前 `/f2-canvas/lib/` 目录下的 f2.js 文件为 3.2.0-beta.x 版本（支持图表交互）。如有必要，也可以由用户自己编译（如要使用 F2 的按需加载）替换。
+
+## API
+
+参见 F2 API：https://antv.alipay.com/zh-cn/f2/3.x/api/index.html
 
 ## 快速开始
 
@@ -59,7 +64,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
   各个文件的内容如下：
 
   + `index.json` 配置文件，引入 f2-canvas 组件，这里需要注意路径要正确，由于微信小程序组件名不允许包含数字，所以这里将其命名为 ff-canvas
-  
+
   ```js
   // index.json
   {
@@ -68,7 +73,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
     }
   }
   ```
-  
+
   + `index.wxml` 视图，使用 ff-canvas 组件，其中 `opts` 是一个我们在 index.js 中定义的对象，**必设属性**，它使得图表能够在页面加载后被初始化并设置，详见 index.js 中的使用。
 
   ```html
@@ -134,9 +139,8 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
   });
   ```
 
-
   由于 f2-canvas 组件主要是对小程序的画布上下文和 html5 canvas 的上下文进行了适配以支持 F2 在小程序端的渲染，所以 **F2 能绘制什么图表，小程序端就能绘制什么图表**，使用时也只需按照 F2 的语法来写即可。
-  
+
   本项目只展示了部分 demos，更全的见 [AntV F2](https://antv.alipay.com/zh-cn/f2/3.x/demo/index.html)。
 
   需要注意的是，在创建 chart 的时候，需要使用 'el' 属性来指定容器，对应 `this.data.opts.onInit` 方法形参中的 `canvas` 属性，另外该方法还会返回 `width`, `height` 属性分别对应画布的宽和高。
