@@ -35,3 +35,13 @@
   margin: 0 auto;
   margin-bottom: 10px;
 }
+
+.list-item-block {
+  height: 80rpx;
+  line-height: 80rpx;
+  /* text-indent: 30rpx; */
+  border-bottom: 2rpx solid #cccccc; 
+  width: 100%;
+  color: #808080;
+  font-size: 12px;
+}

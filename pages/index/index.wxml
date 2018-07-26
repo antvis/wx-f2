@@ -1,4 +1,11 @@
 <view class="page">
+  <view wx:for="{{interactions}}" wx:for-item="chart" wx:key="{{chart.name}}" 
+    data-page="{{chart.name}}"  
+    bindtap="gotoPage"
+    class="list-item-block">
+    <icon type="success_no_circle" size="20"/>
+    {{chart.value}}
+  </view>
   <view  wx:for="{{charts}}" wx:for-item="chart" wx:key="{{chart.name}}"  class="list-item">
      <image src="../../img/{{chart.name}}.png" data-page="{{chart.name}}" mode="aspectFit" bindtap="gotoPage" ></image> 
     {{chart.value}}
