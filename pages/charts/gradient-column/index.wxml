@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <ff-canvas id="gradient-column-dom" canvas-id="gradient" opts="{{ opts }}"></ff-canvas>
+</view>

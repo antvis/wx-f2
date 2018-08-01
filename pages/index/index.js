@@ -18,11 +18,12 @@ Page({
       { name: 'stack-area', value: '层叠区域图' },
       { name: 'multiCharts', value: '多图表好性能' }
     ],
-    interactions: [
+    others: [
       { name: 'scroll-line', value: '线图平移交互(长按展示 tooltip)' },
       { name: 'steps-pan', value: '每日步数（柱状图平移）' },
       { name: 'pie-select', value: '饼图选中交互' },
-      { name: 'column-select', value: '柱状图选中交互(可取消选中)' }
+      { name: 'column-select', value: '柱状图选中交互(可取消选中)' },
+      { name: 'gradient-column', value: '渐变色柱状图' }
     ]
   },
   gotoPage: function (e) {
