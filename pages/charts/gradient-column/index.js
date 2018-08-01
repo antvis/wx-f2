@@ -35,7 +35,7 @@ function initChart(canvas, width, height) {
       items[0].value = '¥ ' + items[0].value;
     }
   });
-  chart.interval().position('year*sales').color(grd);
+  chart.interval().position('year*sales').color(grd); // 使用创建的渐变色对象进行颜色填充
   chart.render();
   return chart;
 }
