@@ -83,27 +83,6 @@ function initChart(canvas, width, height) {
   chart.interval().position('date*steps').color('#FF5842').style({
     radius: [2, 2, 0, 0]
   });
-  // chart.guide().clear();
-  // firstDayArr.forEach(function (obj) {
-  //   chart.guide().line({
-  //     top: false,
-  //     start: [obj.date, 'min'],
-  //     end: [obj.date, 'max'],
-  //     style: {
-  //       lineWidth: 1,
-  //       stroke: '#A4A4A4'
-  //     }
-  //   }).text({
-  //     position: [obj.date, 'min'],
-  //     content: obj.date.slice(5),
-  //     style: {
-  //       textAlign: 'start',
-  //       fill: '#cacaca',
-  //       textBaseline: 'top'
-  //     },
-  //     offsetY: 20
-  //   });
-  // });
 
   chart.interaction('pan', {
     mode: 'x',
