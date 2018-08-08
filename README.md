@@ -25,7 +25,6 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 │   ├── f2-canvas.json
 │   ├── f2-canvas.wxml
 │   ├── f2-canvas.wxss
-│   ├── interaction              // f2 封装的图表交互模块
 │   └── lib                      // f2-canvas 组件依赖的类库
 │       ├── EventEmitter.min.js  // 事件发射器，用于监听、触发事件， 3.1K
 │       ├── f2.js                // f2 脚本（压缩），155K
@@ -40,7 +39,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
 **注意**
 
-当前 `/f2-canvas/lib/` 目录下的 f2.js 文件为 3.2.0-beta.x 版本（支持图表交互）。如有必要，也可以由用户自己编译（如要使用 F2 的按需加载）替换。
+当前 `/f2-canvas/lib/` 目录下的 f2.js 文件为 3.2.0-beta.x 的完整版本（f2-all.js 支持图表交互）。如有必要，也可以由用户自己编译（如要使用 F2 的按需加载）替换。
 
 ## API
 

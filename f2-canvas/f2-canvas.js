@@ -1,7 +1,6 @@
 // f2-canvas.js
 import Renderer from './lib/renderer';
 import F2 from './lib/f2';
-import './interaction/index';
 let ctx;
 // override
 F2.Util.measureText = function (text, font) {
