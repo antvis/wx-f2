@@ -7,17 +7,10 @@ function formatNumber(n) {
 }
 
 function initChart(canvas, width, height) {
-  var originDates = [];
-  var originSteps = [];
-  var firstDayArr = [];
-  data.forEach(function (obj) {
+  const originDates = [];
+  data.forEach(obj => {
     if (obj.date >= '2018-05-01') {
       originDates.push(obj.date);
-      originSteps.push(obj.steps);
-    }
-
-    if (obj.first) {
-      firstDayArr.push(obj);
     }
   });
 
@@ -36,9 +29,7 @@ function initChart(canvas, width, height) {
       mask: 'MM-DD'
     },
     steps: {
-      tickInterval: 5000,
-      min: Math.min.apply(null, originSteps),
-      max: Math.max.apply(null, originSteps)
+      tickCount: 5
     }
   });
 
@@ -56,13 +47,12 @@ function initChart(canvas, width, height) {
   });
   chart.axis('steps', {
     position: 'right',
-    label: function label(text) {
+    label(text) {
       return {
         text: formatNumber(text * 1),
         fill: '#cacaca'
       };
     },
-
     grid: {
       stroke: '#d1d1d1'
     }
@@ -71,67 +61,28 @@ function initChart(canvas, width, height) {
     showItemMarker: false,
     background: {
       radius: 2,
-      fill: '#FF5842',
       padding: [3, 5]
     },
-    onShow: function onShow(ev) {
-      var items = ev.items;
+    onShow(ev) {
+      const items = ev.items;
       items[0].name = '';
       items[0].value = items[0].value + ' 步';
     }
   });
-  chart.interval().position('date*steps').color('#FF5842').style({
-    radius: [2, 2, 0, 0]
+  chart.interval().position('date*steps').style({
+    radius: [ 2, 2, 0, 0 ]
   });
-  // chart.guide().clear();
-  // firstDayArr.forEach(function (obj) {
-  //   chart.guide().line({
-  //     top: false,
-  //     start: [obj.date, 'min'],
-  //     end: [obj.date, 'max'],
-  //     style: {
-  //       lineWidth: 1,
-  //       stroke: '#A4A4A4'
-  //     }
-  //   }).text({
-  //     position: [obj.date, 'min'],
-  //     content: obj.date.slice(5),
-  //     style: {
-  //       textAlign: 'start',
-  //       fill: '#cacaca',
-  //       textBaseline: 'top'
-  //     },
-  //     offsetY: 20
-  //   });
-  // });
 
-  chart.interaction('pan', {
+  // 定义进度条
+  chart.scrollBar({
     mode: 'x',
-    onEnd: function onEnd() {
-      var xScale = chart.getXScale();
-      // timeCat 类型
-      var source = chart.get('data');
-      var yValues = [];
-      source.map(function (obj) {
-        var xValue = obj.date;
-        if (xScale.translate(xValue) >= 0) {
-          yValues.push(obj.steps);
-        }
-      });
-
-      if (yValues.length) {
-        var yMin = Math.min.apply(null, yValues);
-        var yMax = Math.max.apply(null, yValues);
-
-        chart.scale('steps', {
-          min: yMin,
-          max: yMax,
-          tickInterval: 5000
-        });
-        chart.repaint();
-      }
+    xStyle: {
+      backgroundColor: '#e8e8e8',
+      fillerColor: '#808080',
+      offsetY: -2
     }
   });
+  chart.interaction('pan');
   chart.render();
   return chart;
 }

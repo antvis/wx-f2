@@ -3,12 +3,6 @@ import data from '../../../data/sroll-line.js'
 let chart = null;
 
 function initChart(canvas, width, height) {
-  const years = [];
-  data.map(function (obj) {
-    years.push(obj.release);
-  });
-  const min = Math.min.apply(null, years);
-  const max = Math.max.apply(null, years);
   chart = new F2.Chart({
     el: canvas,
     width,
@@ -32,21 +26,36 @@ function initChart(canvas, width, height) {
     nameStyle: {
       fill: '#fff'
     },
-    onShow: function onShow(ev) {
+    onShow(ev) {
       const items = ev.items;
       items[0].name = items[0].title;
     }
   });
   chart.line().position('release*count');
-  chart.point().position('release*count');
+  chart.point()
+    .position('release*count')
+    .style({
+      lineWidth: 1,
+      stroke: '#fff'
+    });
 
-  chart.interaction('pan', {
-    limitRange: {
-      release: {
-        min: min,
-        max: max
-      }
+  chart.interaction('pan');
+  // 定义进度条
+  chart.scrollBar({
+    mode: 'x',
+    xStyle: {
+      offsetY: -5
     }
+  });
+
+  // 绘制 tag
+  chart.guide().tag({
+    position: [ 1969, 1344 ],
+    withPoint: false,
+    content: '1,344',
+    limitInPlot: true,
+    offsetX: 5,
+    direct: 'cr'
   });
   chart.render();
   return chart;

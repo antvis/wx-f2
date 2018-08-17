@@ -20,7 +20,8 @@
     "pages/charts/scroll-line/index",
     "pages/charts/pie-select/index",
     "pages/charts/column-select/index",
-    "pages/charts/steps-pan/index"
+    "pages/charts/steps-pan/index",
+    "pages/charts/gradient-column/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

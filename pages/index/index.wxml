@@ -1,5 +1,5 @@
 <view class="page">
-  <view wx:for="{{interactions}}" wx:for-item="chart" wx:key="{{chart.name}}" 
+  <view wx:for="{{others}}" wx:for-item="chart" wx:key="{{chart.name}}" 
     data-page="{{chart.name}}"  
     bindtap="gotoPage"
     class="list-item-block">

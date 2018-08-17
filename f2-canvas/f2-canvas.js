@@ -1,14 +1,8 @@
 // f2-canvas.js
 import Renderer from './lib/renderer';
 import F2 from './lib/f2';
-import './interaction/index';
-let ctx;
-// override
-F2.Util.measureText = function (text, font) {
-  ctx.font = font || '12px sans-serif';
-  return ctx.measureText(text);
-};
 
+// 适配小程序的事件机制
 F2.Util.addEventListener = function (source, type, listener) {
   source.addListener(type, listener);
 };
@@ -82,7 +76,7 @@ Component({
         return;
       }
 
-      ctx = wx.createCanvasContext(this.data.canvasId, this); // 获取小程序上下文
+      const ctx = wx.createCanvasContext(this.data.canvasId, this); // 获取小程序上下文
       const canvas = new Renderer(ctx);
       this.canvas = canvas;
 
