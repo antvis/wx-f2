@@ -10,7 +10,6 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
 * 使用微信开发者工具打开此项目
 
-
 ## 文档结构
 
 本项目参考了 [echarts-for-weixin](https://github.com/ecomfe/echarts-for-weixin) 的封装思路，即封装一个自定义组件 <f2-canvas>，方便用户使用，该组件位于 `/f2-canvas` 目录下。
@@ -161,6 +160,28 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
 * 微信版本 **>= 6.6.3**
 * 基础库版本 **>= 1.9.91**
+
+## 常见问题
+
+### 问题 1
+按照 demo 实例操作，但是报如下错误：
+
+```js
+VM4466:1 TypeError: Cannot read property 'defaultView' of undefined
+at Object.getStyle (f2.js? [sm]:1)
+at Object.getWidth (f2.js? [sm]:1)
+at t._initCanvas (f2.js? [sm]:1)
+at new t (f2.js? [sm]:1)
+at e._initCanvas (f2.js? [sm]:1)
+at e._init (f2.js? [sm]:1)
+at new e (f2.js? [sm]:1)
+at Object.initChart [as onInit] (test.js? [sm]:18)
+at t. (f2-canvas.js? [sm]:94)
+at WAService.js:12
+```
+
+**解决**
+检查是否有在 .wxss 文件中为 ff-canvas 组件定义 width 和 height 样式属性，如没有，加上即可，如此代码所示：https://github.com/antvis/wx-f2/blob/master/app.wxss#L16
 
 
 ## 如何贡献
