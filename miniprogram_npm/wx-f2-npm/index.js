@@ -168,12 +168,13 @@ Component({
     init: function init(callback) {
       var _this = this;
 
+      // 2.2.1
       var version = wx.version.version.split('.').map(function (n) {
         return parseInt(n, 10);
       });
-      var isValid = version[0] > 1 || version[0] === 1 && version[1] > 9 || version[0] === 1 && version[1] === 9 && version[2] >= 91;
+      var isValid = version[0] > 2 || version[0] === 2 && version[1] > 2 || version[0] === 2 && version[1] === 2 && version[2] >= 1;
       if (!isValid) {
-        console.error('微信基础库版本过低，需大于等于 1.9.91。');
+        console.error('微信基础库版本过低，需大于等于 2.2.1。');
         return;
       }
 

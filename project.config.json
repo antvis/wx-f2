@@ -12,7 +12,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.0",
+	"libVersion": "2.2.1",
 	"appid": "touristappid",
 	"projectname": "f2-for-miniprogram",
 	"isGameTourist": false,
