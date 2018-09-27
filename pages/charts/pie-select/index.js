@@ -1,8 +1,6 @@
-import F2 from '../../../f2-canvas/lib/f2';
-
 let chart;
 
-function initChart(canvas, width, height) {
+function initChart(F2, canvas, width, height) {
   var data = [
     { name: '芳华', percent: 0.4, a: '1' },
     { name: '妖猫传', percent: 0.2, a: '1' },

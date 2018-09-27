@@ -28,6 +28,7 @@ Page({
   },
   gotoPage: function (e) {
     var page = e.currentTarget.dataset.page;
+    console.log(page, '../charts/' + page + '/index');
     wx.navigateTo({
       url: '../charts/' + page + '/index'
     });

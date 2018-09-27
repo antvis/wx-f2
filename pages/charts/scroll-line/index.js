@@ -1,8 +1,7 @@
-import F2 from '../../../f2-canvas/lib/f2';
 import data from '../../../data/sroll-line.js'
 let chart = null;
 
-function initChart(canvas, width, height) {
+function initChart(F2, canvas, width, height) {
   chart = new F2.Chart({
     el: canvas,
     width,
