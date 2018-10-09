@@ -5,3 +5,8 @@ text {
   top: 10rpx;
   color: crimson
 }
+
+ff-canvas {
+  width: 100%;
+  height: 100%;
+}

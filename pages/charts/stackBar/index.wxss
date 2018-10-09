@@ -1,1 +1,5 @@
 /* pages/charts/stackBar/index.wxss */
+ff-canvas {
+  width: 100%;
+  height: 100%;
+}

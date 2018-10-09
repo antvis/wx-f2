@@ -1,1 +1,5 @@
 /* pages/charts/dodge/index.wxss */
+ff-canvas {
+  width: 100%;
+  height: 100%;
+}

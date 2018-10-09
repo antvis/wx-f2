@@ -15,7 +15,8 @@ function initChart(canvas, width, height) {
     const point1 = coord.convertPoint({ x: x1, y });
     const point2 = coord.convertPoint({ x: x2, y });
 
-    const group = new Group();
+    // const group = new Group();
+    const group = canvas.addGroup();
     group.addShape('Line', {
       attrs: {
         x1: point1.x,
@@ -55,7 +56,7 @@ function initChart(canvas, width, height) {
       text.attr('textAlign', 'center');
       text.attr('textBaseline', 'top');
     }
-    canvas.add(group);
+    //canvas.add(group);
     shape.label = group;
   }
 

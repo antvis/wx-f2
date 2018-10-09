@@ -1,1 +1,5 @@
 /* pages/chart/line/index.wxss */
+ff-canvas {
+  width: 100%;
+  height: 100%;
+}

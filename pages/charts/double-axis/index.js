@@ -36,6 +36,9 @@ function initChart(canvas, width, height) {
   chart.axis('time', {
     grid: null
   });
+  chart.tooltip({
+    showCrosshairs: true
+  });
 
   chart.interval().position('time*tem');
   chart.line().position('time*rain')
