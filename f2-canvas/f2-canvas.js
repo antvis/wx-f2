@@ -1,6 +1,6 @@
 // f2-canvas.js
 import Renderer from './lib/renderer';
-import F2 from './lib/f2';
+import F2 from '@antv/f2/f2-all.min.js';
 
 // 适配小程序的事件机制
 F2.Util.addEventListener = function (source, type, listener) {
@@ -68,11 +68,12 @@ Component({
    */
   methods: {
     init: function(callback) {
+      // 2.2.1
       const version = wx.version.version.split('.').map(n => parseInt(n, 10));
-      const isValid = version[0] > 1 || (version[0] === 1 && version[1] > 9)
-        || (version[0] === 1 && version[1] === 9 && version[2] >= 91);
+      const isValid = version[0] > 2 || (version[0] === 2 && version[1] > 2)
+        || (version[0] === 2 && version[1] === 2 && version[2] >= 1);
       if (!isValid) {
-        console.error('微信基础库版本过低，需大于等于 1.9.91。');
+        console.error('微信基础库版本过低，需大于等于 2.2.1。');
         return;
       }
 

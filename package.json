@@ -1,0 +1,9 @@
+{
+  "name": "wx-f2-demo",
+  "version": "1.0.1",
+  "description": "wx-f2-demo",
+  "license": "MIT",
+  "dependencies": {
+    "@antv/f2": "^3.2.4-beta.2"
+  }
+}
