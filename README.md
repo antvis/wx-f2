@@ -84,7 +84,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
   ```js
   // index.js
-  import F2 from '../../../f2-canvas/lib/f2';
+  import F2 from '@antv/f2/f2-all.min.js';
 
   let chart = null;
 

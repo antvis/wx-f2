@@ -1,4 +1,4 @@
-import F2 from '../../../f2-canvas/lib/f2';
+import F2 from '@antv/f2/f2-all.min.js';
 
 let chart = null;
 

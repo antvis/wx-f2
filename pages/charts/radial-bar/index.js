@@ -1,4 +1,4 @@
-import F2 from '../../../f2-canvas/lib/f2';
+import F2 from '@antv/f2/f2-all.min.js';
 const { Shape, Util, Global, G, Animate } = F2;
 const { Vector2 } = G;
 function initChart(canvas, width, height) {
