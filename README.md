@@ -34,7 +34,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
 ## 下载
 
-微信小程序已支持通过 npm install 来安装第三方的工具库。
+由于目前微信小程序中不支持通过 npm install 来安装第三方的工具库，所以需要将本项目中的 `/f2-canvas` 文件夹拷贝到自己的项目中以便使用。
 
 **注意**
 
@@ -52,14 +52,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
 <img src="https://gw.alipayobjects.com/zos/rmsportal/aDmzXXwkPmUFLCXwXBvo.gif" width="332">
 
-* STEP 1：npm install 安装wx-f2依赖，参见package.json
-  ```js
-  "dependencies": {
-    "wx-f2-npm": "^1.0.2"
-  }
-  ```
-
-* STEP 2：在 pages 目录下新建 column 目录，该目录需要包含以下几个文件：
+* STEP 1：在 pages 目录下新建 column 目录，该目录需要包含以下几个文件：
   + index.js
   + index.json
   + index.wxml
@@ -73,7 +66,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
   // index.json
   {
     "usingComponents": {
-      "ff-canvas": "wx-f2-npm"
+      "ff-canvas": "../../../f2-canvas/f2-canvas"
     }
   }
   ```
@@ -87,14 +80,15 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
   </view>
   ```
 
-  + `index.js` 逻辑处理。** 需要注意，引用NPM包使用后，回调函数 initChart 存在不兼容变更，通过新增 F2 参数来获取 F2 对象上下文。 **
+  + `index.js` 逻辑处理，这里还需要引入 F2 用于绘制图表，结构如下，注意路径正确。
 
   ```js
   // index.js
+  import F2 from '../../../f2-canvas/lib/f2';
 
   let chart = null;
 
-  function initChart(F2, canvas, width, height) { // 使用 F2 绘制图表
+  function initChart(canvas, width, height) { // 使用 F2 绘制图表
     const data = [
       { year: '1951 年', sales: 38 },
       { year: '1952 年', sales: 52 },
@@ -165,8 +159,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 ## 微信版本要求
 
 * 微信版本 **>= 6.6.3**
-* 基础库版本 **>= 2.2.1**
-* 开发者工具版本 **>= 1.02.1808300**
+* 基础库版本 **>= 1.9.91**
 
 ## 常见问题
 

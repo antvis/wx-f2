@@ -1,6 +1,8 @@
+import F2 from '../../../f2-canvas/lib/f2';
+
 let chart = null;
 
-function initChart(F2, canvas, width, height) {
+function initChart(canvas, width, height) {
   const { Util, G } = F2;
   const { Group } = G;
   function drawLabel(shape, coord, canvas) {

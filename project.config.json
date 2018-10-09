@@ -8,12 +8,11 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true,
-		"nodeModules": true
+		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.1",
-	"appid": "touristappid",
+	"libVersion": "1.9.98",
+	"appid": "wxf4f3222aca3bb495",
 	"projectname": "f2-for-miniprogram",
 	"isGameTourist": false,
 	"condition": {
