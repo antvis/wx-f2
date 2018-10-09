@@ -1,7 +1,6 @@
-import F2 from '../../../f2-canvas/lib/f2';
-const { Shape, Util, Global, G, Animate } = F2;
-const { Vector2 } = G;
-function initChart(canvas, width, height) {
+function initChart(F2, canvas, width, height) {
+  const { Shape, Util, Global, G, Animate } = F2;
+  const { Vector2 } = G;
   // customize shape and animation
   Shape.registerShape('interval', 'tick', {
     draw(cfg, container) {

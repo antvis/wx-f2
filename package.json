@@ -1,0 +1,17 @@
+{
+  "name": "wx-f2-npm-demo",
+  "version": "1.0.1",
+  "description": "wx-f2-npm-demo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/billfeller/wx-f2.git"
+  },
+  "author": "billfeller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/billfeller/wx-f2/issues"
+  },
+  "dependencies": {
+    "wx-f2-npm": "^1.0.5"
+  }
+}

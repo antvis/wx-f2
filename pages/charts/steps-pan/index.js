@@ -1,4 +1,3 @@
-import F2 from '../../../f2-canvas/lib/f2';
 import data from '../../../data/steps-pan.js'
 let chart = null;
 
@@ -6,7 +5,7 @@ function formatNumber(n) {
   return String(Math.floor(n * 100) / 100).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-function initChart(canvas, width, height) {
+function initChart(F2, canvas, width, height) {
   const originDates = [];
   data.forEach(obj => {
     if (obj.date >= '2018-05-01') {

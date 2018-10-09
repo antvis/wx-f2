@@ -1,8 +1,6 @@
-import F2 from '../../../f2-canvas/lib/f2';
-
 let chart = null;
 
-function initChart(canvas, width, height) {
+function initChart(F2, canvas, width, height) {
   const data = [
     { State: 'WY', 年龄段: '小于5岁', 人口数量: 25635 },
     { State: 'WY', 年龄段: '5至13岁', 人口数量: 1890 },
