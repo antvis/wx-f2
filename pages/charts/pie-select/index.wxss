@@ -4,3 +4,8 @@ text {
   position: absolute;
   top: 80rpx;
 }
+
+ff-canvas {
+  width: 100%;
+  height: 100%;
+}
