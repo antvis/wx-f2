@@ -1,6 +1,8 @@
+import F2 from '../../../f2-canvas/lib/f2';
+
 let chart = null;
 
-function initChart(F2, canvas, width, height) {
+function initChart(canvas, width, height) {
   const Shape = F2.Shape;
   const data = [
     { pointer: '当前收益', value: 5, length: 2, y: 1.05 }

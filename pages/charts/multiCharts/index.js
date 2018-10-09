@@ -1,3 +1,5 @@
+import F2 from '../../../f2-canvas/lib/f2';
+
 Page({
   onShareAppMessage: function (res) {
     return {
@@ -9,7 +11,7 @@ Page({
   },
   data: {
     drawBar: {
-      onInit: function (F2, canvas, width, height) {
+      onInit: function (canvas, width, height) {
         const data = [
           { State: 'WY', 年龄段 : '小于5岁', 人口数量: 25635 },
           { State: 'WY', 年龄段 : '5至13岁', 人口数量: 1890 },

@@ -1,6 +1,8 @@
+import F2 from '../../../f2-canvas/lib/f2';
+
 let chart = null;
 
-function initChart(F2, canvas, width, height) {
+function initChart(canvas, width, height) {
   const data = [
     { name: '超大盘能力', value: 6.5 },
     { name: '抗跌能力', value: 9.5 },

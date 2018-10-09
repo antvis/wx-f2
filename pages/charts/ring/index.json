@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "ff-canvas": "wx-f2-npm"
+    "ff-canvas": "../../../f2-canvas/f2-canvas"
   }
 }

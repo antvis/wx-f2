@@ -1,3 +1,5 @@
+import F2 from '../../../f2-canvas/lib/f2';
+
 Page({
   onShareAppMessage: function (res) {
     return {
@@ -22,7 +24,7 @@ Page({
       success: function (res) {
         let data = res.data;
         self.chartComponent = self.selectComponent('#kChart');  
-        self.chartComponent.init((F2, canvas, width, height) => {
+        self.chartComponent.init((canvas, width, height) => {
           // 获取组件的 canvas、width、height 后的回调函数
           // 开始初始化图表
           data = data.slice(0, 50); // 为了显示美观仅显示 100 个

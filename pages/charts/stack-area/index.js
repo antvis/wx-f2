@@ -1,4 +1,6 @@
-function initChart(F2, canvas, width, height) {
+import F2 from '../../../f2-canvas/lib/f2';
+
+function initChart(canvas, width, height) {
   const arr = [
     { type: "湿度/%", value: 66.4, date: "2018-06-01 10:04:00" },
     { type: "温度/℃", value: 24.8, date: "2018-06-01 10:04:00" },

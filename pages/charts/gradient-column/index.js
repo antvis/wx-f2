@@ -1,6 +1,8 @@
+import F2 from '../../../f2-canvas/lib/f2';
+
 let chart = null;
 
-function initChart(F2, canvas, width, height) {
+function initChart(canvas, width, height) {
   const data = [
     { year: '1951 年', sales: 38 },
     { year: '1952 年', sales: 52 },
