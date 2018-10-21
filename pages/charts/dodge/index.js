@@ -1,8 +1,6 @@
-import F2 from '../../../f2-canvas/lib/f2';
-
 let chart = null;
 
-function initChart(canvas, width, height) {
+function initChart(canvas, width, height, F2) {
   const data = [
     { name: 'London', 月份: 'Jan.', 月均降雨量: 18.9 },
     { name: 'London', 月份: 'Feb.', 月均降雨量: 28.8 },

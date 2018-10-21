@@ -1,5 +1,4 @@
-import F2 from '../../../f2-canvas/lib/f2';
-
+const F2 = require('@antv/wx-f2');
 Page({
   onShareAppMessage: function (res) {
     return {
@@ -23,7 +22,7 @@ Page({
       url: 'https://antv.alipay.com/assets/data/candle-sticks.json',
       success: function (res) {
         let data = res.data;
-        self.chartComponent = self.selectComponent('#kChart');  
+        self.chartComponent = self.selectComponent('#kChart');
         self.chartComponent.init((canvas, width, height) => {
           // 获取组件的 canvas、width、height 后的回调函数
           // 开始初始化图表
@@ -93,6 +92,6 @@ Page({
           return chart;
         });
       }
-    })  
+    })
   }
 });

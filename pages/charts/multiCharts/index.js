@@ -1,5 +1,3 @@
-import F2 from '../../../f2-canvas/lib/f2';
-
 Page({
   onShareAppMessage: function (res) {
     return {
@@ -11,7 +9,7 @@ Page({
   },
   data: {
     drawBar: {
-      onInit: function (canvas, width, height) {
+      onInit: function (canvas, width, height, F2) {
         const data = [
           { State: 'WY', 年龄段 : '小于5岁', 人口数量: 25635 },
           { State: 'WY', 年龄段 : '5至13岁', 人口数量: 1890 },
@@ -95,7 +93,7 @@ Page({
     },
 
     drawScatter: {
-      onInit: function (canvas, width, height) {
+      onInit: function (canvas, width, height, F2) {
         const data = [
           { x: 95, y: 95, z: 13.8, name: 'BE', country: 'Belgium' },
           { x: 86.5, y: 102.9, z: 14.7, name: 'DE', country: 'Germany' },
@@ -193,7 +191,7 @@ Page({
     },
 
     drawRadial: {
-      onInit: function (canvas, width, height) {
+      onInit: function (canvas, width, height, F2) {
         const data = [
           { tem: 6.9, city: 'Tokyo' },
           { tem: 11.3, city: 'New York' },

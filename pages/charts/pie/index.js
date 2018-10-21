@@ -1,8 +1,6 @@
-import F2 from '../../../f2-canvas/lib/f2';
-
 let chart = null;
 
-function initChart(canvas, width, height) {
+function initChart(canvas, width, height, F2) {
   const map = {
     '芳华': '40%',
     '妖猫传': '20%',

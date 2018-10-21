@@ -66,7 +66,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
   // index.json
   {
     "usingComponents": {
-      "ff-canvas": "../../../f2-canvas/f2-canvas"
+      "ff-canvas": "@antv/f2-canvas"
     }
   }
   ```
@@ -88,7 +88,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
   let chart = null;
 
-  function initChart(canvas, width, height) { // 使用 F2 绘制图表
+  function initChart(canvas, width, height, F2) { // 使用 F2 绘制图表
     const data = [
       { year: '1951 年', sales: 38 },
       { year: '1952 年', sales: 52 },
