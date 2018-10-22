@@ -1,4 +1,4 @@
-import F2 from '../../../f2-canvas/lib/f2';
+import F2 from '@antv/wx-f2';
 const { Shape, Util, Global, G, Animate } = F2;
 const { Vector2 } = G;
 function initChart(canvas, width, height) {
@@ -135,7 +135,7 @@ function initChart(canvas, width, height) {
     setTimeout(updateData, 1500);
   };
 
-  setTimeout(updateData, 1500); */   
+  setTimeout(updateData, 1500); */
   return chart;
 }
 

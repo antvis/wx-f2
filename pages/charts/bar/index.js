@@ -1,8 +1,7 @@
-import F2 from '../../../f2-canvas/lib/f2';
 
 let chart = null;
 
-function initChart(canvas, width, height) {
+function initChart(canvas, width, height, F2) {
   chart = new F2.Chart({
     el: canvas,
     width,
@@ -11,10 +10,10 @@ function initChart(canvas, width, height) {
 
   var Global = F2.Global;
   var data = [
-    { country: '巴西', population: 18203 }, 
+    { country: '巴西', population: 18203 },
     { country: '印尼', population: 23489 },
-    { country: '美国', population: 29034 }, 
-    { country: '印度', population: 104970 }, 
+    { country: '美国', population: 29034 },
+    { country: '印度', population: 104970 },
     { country: '中国', population: 131744 }
   ];
 
@@ -45,7 +44,7 @@ function initChart(canvas, width, height) {
   });
   chart.interval().position('country*population');
   chart.render();
-  
+
   return chart;
 }
 

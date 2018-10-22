@@ -1,8 +1,6 @@
-import F2 from '../../../f2-canvas/lib/f2';
-
 let chart = null;
 
-function initChart(canvas, width, height) {
+function initChart(canvas, width, height, F2) {
   const data = [
     { time: '周一', tem: 6.9, rain: 10 },
     { time: '周二', tem: 9.5, rain: 13 },
