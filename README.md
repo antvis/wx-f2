@@ -38,10 +38,14 @@ npm install --production
 
 ![image](https://gw.alipayobjects.com/zos/rmsportal/kORAowbzpNioXseBQoxC.png)
 
+#### 说明
+
+@antv/f2-canvas 模块为 F2 的微信小程序图表自定义组件，依赖于 @antv/wx-f2(F2 对于微信小程序进行的适配)，请直接使用 @antv/f2-canvas，如果需要单独引入 F2 全局变量时，请安装 @antv/wx-f2，如不需要，则不需要安装。
+
 
 ## API
 
-* `@antv/f2-canvas` 的使用详见： https://github.com/simaQ/f2-canvas/blob/master/README.md
+* `@antv/f2-canvas` 的使用详见： hhttps://github.com/antvis/f2-canvas
 
 *  F2 API 参见：https://antv.alipay.com/zh-cn/f2/3.x/api/index.html
 
