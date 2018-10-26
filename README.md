@@ -45,7 +45,7 @@ npm install --production
 
 ## API
 
-* `@antv/f2-canvas` 的使用详见： hhttps://github.com/antvis/f2-canvas
+* `@antv/f2-canvas` 的使用详见： https://github.com/antvis/f2-canvas
 
 *  F2 API 参见：https://antv.alipay.com/zh-cn/f2/3.x/api/index.html
 
