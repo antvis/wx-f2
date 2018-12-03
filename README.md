@@ -12,7 +12,7 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
 ## 如何使用
 
-本 demo 图表使用微信小程序 F2 自定义图表组件 [f2-canvas]() 绘制，故需要微信小程序支持使用 npm 安装第三包。
+本 demo 图表使用微信小程序 F2 自定义图表组件 [f2-canvas](https://github.com/simaQ/f2-canvas) 绘制，故需要微信小程序支持使用 npm 安装第三包。
 **重要：版本要求**
 
 1. 小程序基础库版本 2.2.1 或以上
@@ -40,7 +40,12 @@ npm install --production
 
 #### 说明
 
-@antv/f2-canvas 模块为 F2 的微信小程序图表自定义组件，依赖于 @antv/wx-f2(F2 对于微信小程序进行的适配)，请直接使用 @antv/f2-canvas，如果需要单独引入 F2 全局变量时，请安装 @antv/wx-f2，如不需要，则不需要安装。
+* @antv/f2-canvas 模块为 F2 的微信小程序图表自定义组件，依赖于 @antv/wx-f2(F2 对于微信小程序进行的适配)，**请直接使用 @antv/f2-canvas**。
+
+* 如果需要单独引入 F2 全局变量时，请安装 @antv/wx-f2，如不需要，则不需要安装。
+
+* 非 npm 包安装的自定义组件使用方式见 [custom-components](https://github.com/antvis/wx-f2/tree/custom-components) 分支。
+
 
 
 ## API
