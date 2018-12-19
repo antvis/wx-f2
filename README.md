@@ -40,6 +40,8 @@ F2 的微信小程序版本，支持原生 [F2](https://antv.alipay.com/zh-cn/f2
 
 当前 `/f2-canvas/lib/` 目录下的 f2.js 文件为 3.2.0-beta.x 的完整版本（f2-all.js 支持图表交互）。如有必要，也可以由用户自己编译（如要使用 F2 的按需加载）替换。
 
+下载地址：https://unpkg.com/@antv/f2@3.3.2/dist/  版本请自行替换更新
+
 ## API
 
 参见 F2 API：https://antv.alipay.com/zh-cn/f2/3.x/api/index.html
