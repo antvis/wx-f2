@@ -4,7 +4,7 @@
   "description": "wx-f2-demo",
   "license": "MIT",
   "dependencies": {
-    "@antv/f2-canvas": "~1.0.4",
-    "@antv/wx-f2": "~1.1.3"
+    "@antv/f2-canvas": "~1.0.5",
+    "@antv/wx-f2": "~1.1.4"
   }
 }

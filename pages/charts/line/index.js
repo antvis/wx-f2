@@ -24,6 +24,7 @@ function initChart(canvas, width, height, F2) {
 
   chart.tooltip({
     custom: true, // 自定义 tooltip 内容框
+    showXTip: true,
     onChange(obj) {
       const legend = chart.get('legendController').legends.top[0];
       const tooltipItems = obj.items;
