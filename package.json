@@ -1,10 +1,31 @@
 {
-  "name": "wx-f2-demo",
-  "version": "1.1.0",
-  "description": "wx-f2-demo",
-  "license": "MIT",
+  "name": "@antv/wx-f2",
+  "version": "2.0.0-beta.0",
+  "description": "F2 for weixin mini-program",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run clean && rollup -c && npm run cp",
+    "cp": "node ./scripts/cp.js",
+    "clean": "rm -rf dist",
+    "lint": "eslint ./src --ext .js"
+  },
+  "miniprogram": "dist",
   "dependencies": {
-    "@antv/f2-canvas": "~1.0.5",
-    "@antv/wx-f2": "~1.1.4"
-  }
+    "@antv/f2": "^3.5.0-beta.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^6.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-egg": "^8.0.0",
+    "fs-extra": "^8.1.0",
+    "pre-commit": "^1.2.2",
+    "rollup": "^1.28.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antvis/wx-f2"
+  },
+  "author": "sima.zhang1990@gmail.com",
+  "license": "MIT"
 }

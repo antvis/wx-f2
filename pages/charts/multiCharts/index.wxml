@@ -1,6 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-  <ff-canvas id="multi-bar-dom" canvas-id="multi-bar" opts="{{ drawBar }}"></ff-canvas>
-  <ff-canvas id="multi-scatter-dom" canvas-id="multi-scatter" opts="{{ drawScatter }}"></ff-canvas>
-  <ff-canvas id="multi-radial-dom" canvas-id="multi-radial" opts="{{ drawRadial }}"></ff-canvas>
-</view>

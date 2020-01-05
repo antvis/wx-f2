@@ -1,4 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-  <ff-canvas id="stepsPan" canvas-id="stepsPan" opts="{{ opts }}"></ff-canvas>
-</view>

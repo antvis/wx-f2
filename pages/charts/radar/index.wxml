@@ -1,4 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-  <ff-canvas id="radar-dom" canvas-id="radar" opts="{{ opts }}"></ff-canvas>
-</view>

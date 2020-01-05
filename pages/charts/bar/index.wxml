@@ -1,4 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-  <ff-canvas id="bar-dom" canvas-id="bar" opts="{{ opts }}"></ff-canvas>
-</view>

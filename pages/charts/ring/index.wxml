@@ -1,4 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-  <ff-canvas id="ring-dom" canvas-id="ring" opts="{{ opts }}"></ff-canvas>
-</view>
