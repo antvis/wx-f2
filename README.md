@@ -53,7 +53,7 @@ npm install @antv/wx-f2 --save
 ```
 
 #### 3. 实例化图表
-```xml
+```js
 Page({
   data: {
     onInitChart(F2, config) {
@@ -83,7 +83,7 @@ Page({
       chart.area().position('date*value').color('city').adjust('stack');
       chart.line().position('date*value').color('city').adjust('stack');
       chart.render();
-			// 注意：这里需要把chart实例return出来
+      // 注意：需要把chart return 出来
       return chart;
     }
   },

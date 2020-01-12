@@ -11,7 +11,7 @@
   },
   "miniprogram": "dist",
   "dependencies": {
-    "@antv/f2": "^3.5.0-beta.4"
+    "@antv/f2": "~3.5.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
