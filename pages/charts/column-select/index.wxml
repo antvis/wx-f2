@@ -1,5 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-  <text>请点击柱子</text>  
-  <ff-canvas id="columnSelect" canvas-id="columnSelect" opts="{{ opts }}"></ff-canvas>
-</view>
