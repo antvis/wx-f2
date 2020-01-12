@@ -1,6 +1,6 @@
 {
   "name": "@antv/wx-f2",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0",
   "description": "F2 for weixin mini-program",
   "main": "dist/index.js",
   "scripts": {
