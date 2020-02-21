@@ -40,6 +40,12 @@ npm install @antv/wx-f2 --save
 
 ![](https://gw.alipayobjects.com/zos/rmsportal/kORAowbzpNioXseBQoxC.png#align=left&display=inline&height=746&originHeight=746&originWidth=392&status=done&style=none&width=392)
 
+如果碰到 **@babel/runtime 未找到npm包入口文件**，直接忽略就行了，不影响使用（强迫症碍眼的话，手动删除`node_modules/@babel/runtime`目录）
+```bash
+rm -rf node_modules/@babel/runtime
+```
+![](https://gw.alipayobjects.com/zos/finxbff/compress-tinypng/8997fffd-f9e4-45e4-b773-45f85e33f2f2.jpg)
+
 ### 2. 使用自定义组件
 #### 1. 打开json文件，引入组件
 ```json
