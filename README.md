@@ -19,7 +19,12 @@ F2 的微信小程序版本，支持原生 [F2](https://f2.antv.vision/) 的所�
 
 ## 如何使用
 ### 1. 安装依赖
+项目默认初始化出来的是没有`package.json`的，需要新增`package.json`后再安装
+
 ```bash
+## 没有package.json时执行下面这段
+## echo "{}" > package.json
+
 npm install @antv/wx-f2 --save
 ```
 
@@ -48,11 +53,19 @@ npm install @antv/wx-f2 --save
 #### 2. wxml 使用组件
 ```xml
 <view class="container">
-  <f2 onInit="{{onInitChart}}" />
+  <f2 class="f2-chart" onInit="{{onInitChart}}" />
 </view>
 ```
 
-#### 3. 实例化图表
+#### 3. wxss 设置宽高
+```css
+.f2-chart {
+  width: 100%;
+  height: 500rpx;
+}
+```
+
+#### 4. 实例化图表
 ```js
 Page({
   data: {
