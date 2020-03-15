@@ -1,6 +1,14 @@
 
 import F2 from '@antv/f2';
 
+function wrapEvent(e) {
+  if (!e) return;
+  if (!e.preventDefault) {
+    e.preventDefault = function() {};
+  }
+  return e;
+}
+
 Component({
   /**
    * 组件的属性列表
@@ -35,7 +43,11 @@ Component({
         node.height = height * pixelRatio;
 
         const config = { context, width, height, pixelRatio };
-        this.chart = this.data.onInit(F2, config);
+        const chart = this.data.onInit(F2, config);
+        if (chart) {
+          this.chart = chart;
+          this.canvasEl = chart.get('el');
+        }
       });
   },
 
@@ -44,19 +56,25 @@ Component({
    */
   methods: {
     touchStart(e) {
-      if (this.chart) {
-        this.chart.get('el').dispatchEvent('touchstart', e);
+      const canvasEl = this.canvasEl;
+      if (!canvasEl) {
+        return;
       }
+      canvasEl.dispatchEvent('touchstart', wrapEvent(e));
     },
     touchMove(e) {
-      if (this.chart) {
-        this.chart.get('el').dispatchEvent('touchmove', e);
+      const canvasEl = this.canvasEl;
+      if (!canvasEl) {
+        return;
       }
+      canvasEl.dispatchEvent('touchmove', wrapEvent(e));
     },
     touchEnd(e) {
-      if (this.chart) {
-        this.chart.get('el').dispatchEvent('touchend', e);
+      const canvasEl = this.canvasEl;
+      if (!canvasEl) {
+        return;
       }
+      canvasEl.dispatchEvent('touchend', wrapEvent(e));
     }
   }
 });
