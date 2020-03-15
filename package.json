@@ -11,7 +11,7 @@
   },
   "miniprogram": "dist",
   "dependencies": {
-    "@antv/f2": "~3.5.0"
+    "@antv/f2": "~3.6.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
@@ -19,7 +19,6 @@
     "eslint": "^6.8.0",
     "eslint-config-egg": "^8.0.0",
     "fs-extra": "^8.1.0",
-    "pre-commit": "^1.2.2",
     "rollup": "^1.28.0"
   },
   "repository": {
