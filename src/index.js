@@ -1,30 +1,19 @@
 
 import F2 from '@antv/f2';
 
-function wrapEvent(e) {
-  if (!e) return;
-  if (!e.preventDefault) {
-    e.preventDefault = function() {};
-  }
-  return e;
-}
-
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
-    onInit: {
-      type: 'Function',
-      value: () => {}
+    data: {
+      type: 'Array',
+      value: [],
+      observer(data) {
+        const { chart, node, triggerEvent } = this;
+        if (chart) {
+          chart.changeData(data);
+          triggerEvent('upata', { data, chart, node });
+        }
+      }
     }
-  },
-
-  /**
-   * 组件的初始数据
-   */
-  data: {
-
   },
 
   ready() {
@@ -35,6 +24,7 @@ Component({
         size: true
       })
       .exec(res => {
+        const { data: { data }, triggerEvent } = this;
         const { node, width, height } = res[0];
         const context = node.getContext('2d');
         const pixelRatio = wx.getSystemInfoSync().pixelRatio;
@@ -43,38 +33,24 @@ Component({
         node.height = height * pixelRatio;
 
         const config = { context, width, height, pixelRatio };
-        const chart = this.data.onInit(F2, config);
-        if (chart) {
-          this.chart = chart;
-          this.canvasEl = chart.get('el');
-        }
+        const chart = new F2.Chart(config);
+
+        triggerEvent('draw', { data, chart, node });
+        chart.render();
+        triggerEvent('reload', { data, chart, node });
+
+        this.chart = chart;
+        this.canvasEl = chart.get('el');
+        this.node = node;
       });
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
-    touchStart(e) {
+    dispatch(event) {
       const canvasEl = this.canvasEl;
-      if (!canvasEl) {
-        return;
+      if (!event.preventDefault) {
+        event.preventDefault = function() {};
       }
-      canvasEl.dispatchEvent('touchstart', wrapEvent(e));
-    },
-    touchMove(e) {
-      const canvasEl = this.canvasEl;
-      if (!canvasEl) {
-        return;
-      }
-      canvasEl.dispatchEvent('touchmove', wrapEvent(e));
-    },
-    touchEnd(e) {
-      const canvasEl = this.canvasEl;
-      if (!canvasEl) {
-        return;
-      }
-      canvasEl.dispatchEvent('touchend', wrapEvent(e));
+      canvasEl.dispatchEvent(event.type, event);
     }
   }
 });

@@ -1,8 +1,8 @@
 <canvas
   type="2d"
   class="f2-canvas"
-  bindtouchstart="touchStart"
-  bindtouchmove="touchMove"
-  bindtouchend="touchEnd"
+  bindtouchstart="dispatch"
+  bindtouchmove="dispatch"
+  bindtouchend="dispatch"
 >
 </canvas>
