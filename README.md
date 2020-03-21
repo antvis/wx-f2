@@ -59,13 +59,13 @@ rm -rf node_modules/@babel/runtime
 #### 2. wxml 使用组件
 ```xml
 <view class="container">
-  <f2 class="f2-chart" onInit="{{onInitChart}}" />
+  <f2 data="{{data}}" bind:draw="draw" />
 </view>
 ```
 
 #### 3. wxss 设置宽高
 ```css
-.f2-chart {
+.container {
   width: 100%;
   height: 500rpx;
 }
@@ -75,41 +75,51 @@ rm -rf node_modules/@babel/runtime
 ```js
 Page({
   data: {
-    onInitChart(F2, config) {
-      const chart = new F2.Chart(config);
-      const data = [
-        { value: 63.4, city: 'New York', date: '2011-10-01' },
-        { value: 62.7, city: 'Alaska', date: '2011-10-01' },
-        { value: 72.2, city: 'Austin', date: '2011-10-01' },
-        { value: 58, city: 'New York', date: '2011-10-02' },
-        { value: 59.9, city: 'Alaska', date: '2011-10-02' },
-        { value: 67.7, city: 'Austin', date: '2011-10-02' },
-        { value: 53.3, city: 'New York', date: '2011-10-03' },
-        { value: 59.1, city: 'Alaska', date: '2011-10-03' },
-        { value: 69.4, city: 'Austin', date: '2011-10-03' },
-      ];
-      chart.source(data, {
-        date: {
-          range: [0, 1],
-          type: 'timeCat',
-          mask: 'MM-DD'
-        },
-        value: {
-          max: 300,
-          tickCount: 4
-        }
-      });
-      chart.area().position('date*value').color('city').adjust('stack');
-      chart.line().position('date*value').color('city').adjust('stack');
-      chart.render();
-      // 注意：需要把chart return 出来
-      return chart;
-    }
+    data:[
+      { value: 123, type: '运行指数', date: '10/01' },
+      { value: 62, type: '历史均值', date: '10/01' },
+      { value: 212, type: '运行指数', date: '10/02' },
+      { value: 59, type: '历史均值', date: '10/02' },
+      { value: 53, type: '运行指数', date: '10/03' },
+      { value: 210, type: '历史均值', date: '10/03' },
+      { value: 162, type: '运行指数', date: '10/04' },
+      { value: 1, type: '历史均值', date: '10/04' }
+    ]
   },
+  draw ({ detail: { chart, data } }) {
+    chart.source(data, {
+      date: {
+        range: [0, 1]
+      }
+    })
+    chart.legend('type', {
+      align: 'right',
+      itemWidth: 80
+    })
+    chart.area().shape('smooth').position('date*value').color('type', ['l(90) 0:#de5341 1:#ffffff', 'l(90) 0:#4a81ed 1:#ffffff'])
+    chart.line().shape('smooth').position('date*value').color('type', ['#de5341', '#4a81ed'])
+
+    // 无需render
+  }
 });
 ```
+## 组件 API
+### Props
 
-## API
+|参数|说明|类型|默认值|
+|:-|:-|:-|:-|
+|data|数据源(修改data会自动更新图表)|Array|[]|
+|show-image|是否以图片显示|boolean|false|
+
+### Events
+
+|事件名|说明|
+|:-|:-|
+|draw|chart绘制|
+|reload|chart绘制完成|
+|updata|数据更新|
+
+## f2 API
 
 - F2 API 参见：[https://f2.antv.vision/zh/docs/api/f2](https://f2.antv.vision/zh/docs/api/f2)
 
