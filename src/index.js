@@ -3,16 +3,27 @@ import F2 from '@antv/f2';
 
 Component({
   properties: {
+    // 数据
     data: {
-      type: 'Array',
+      type: Array,
       value: [],
       observer(data) {
-        const { chart, node, triggerEvent } = this;
+        const { data: { showImage }, chart, node, triggerEvent } = this;
         if (chart) {
           chart.changeData(data);
-          triggerEvent('upata', { data, chart, node });
+          triggerEvent('updata', { data, chart, node });
+          if (showImage) {
+            this.setData({
+              dataURL: node._canvasRef.toDataURL('image/png')
+            });
+          }
         }
       }
+    },
+    // 是否显示为图片
+    showImage: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -24,7 +35,7 @@ Component({
         size: true
       })
       .exec(res => {
-        const { data: { data }, triggerEvent } = this;
+        const { data: { data, showImage }, triggerEvent } = this;
         const { node, width, height } = res[0];
         const context = node.getContext('2d');
         const pixelRatio = wx.getSystemInfoSync().pixelRatio;
@@ -36,7 +47,16 @@ Component({
         const chart = new F2.Chart(config);
 
         triggerEvent('draw', { data, chart, node });
-        chart.render();
+
+        if (showImage) {
+          chart.animate(false);
+          chart.render();
+          this.setData({
+            dataURL: node._canvasRef.toDataURL('image/png')
+          });
+        } else {
+          chart.render();
+        }
         triggerEvent('reload', { data, chart, node });
 
         this.chart = chart;

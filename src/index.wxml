@@ -1,8 +1,11 @@
-<canvas
-  type="2d"
-  class="f2-canvas"
-  bindtouchstart="dispatch"
-  bindtouchmove="dispatch"
-  bindtouchend="dispatch"
->
-</canvas>
+<view class="container">
+  <canvas
+    wx:if="{{!dataURL}}"  
+    type="2d"
+    class="f2-canvas"
+    bindtouchstart="dispatch"
+    bindtouchmove="dispatch"
+    bindtouchend="dispatch"
+  />
+  <image wx:if="{{dataURL}}" src="{{dataURL}}"/>
+</view>
