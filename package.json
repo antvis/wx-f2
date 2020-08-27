@@ -1,6 +1,6 @@
 {
   "name": "@antv/wx-f2",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "F2 for weixin mini-program",
   "main": "dist/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "miniprogram": "dist",
   "dependencies": {
-    "@antv/f2": "~3.6.0"
+    "@antv/f2": "~3.7.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
