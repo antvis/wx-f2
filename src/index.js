@@ -4,7 +4,7 @@ import F2 from '@antv/f2';
 function wrapEvent(e) {
   if (!e) return;
   if (!e.preventDefault) {
-    e.preventDefault = function() {};
+    e.preventDefault = function () { };
   }
   return e;
 }
@@ -16,7 +16,11 @@ Component({
   properties: {
     onInit: {
       type: 'Function',
-      value: () => {}
+      value: () => { }
+    },
+    lazyLoad: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -28,6 +32,7 @@ Component({
   },
 
   ready() {
+    if (this.data.lazyLoad) return
     const query = wx.createSelectorQuery().in(this);
     query.select('.f2-canvas')
       .fields({
@@ -55,6 +60,31 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    init(func) {
+      const query = wx.createSelectorQuery().in(this)
+      query.select('.f2-canvas')
+        .fields({
+          node: true,
+          size: true
+        })
+        .exec(res => {
+          const { node, width, height } = res[0]
+          const context = node.getContext('2d')
+          context.setTransform(1, 0, 0, 1, 0, 0)
+          const pixelRatio = wx.getSystemInfoSync().pixelRatio
+          // 高清设置
+          node.width = width * pixelRatio
+          node.height = height * pixelRatio
+
+          const config = { context, width, height, pixelRatio }
+          F2.Chart.plugins.register(PieLabel);
+          const chart = func(F2, config)
+          if (chart) {
+            this.chart = chart
+            this.canvasEl = chart.get('el')
+          }
+        })
+    },
     touchStart(e) {
       const canvasEl = this.canvasEl;
       if (!canvasEl) {
