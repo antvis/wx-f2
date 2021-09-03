@@ -63,8 +63,13 @@ rm -rf node_modules/@babel/runtime
 </view>
 ```
 
-#### 3. wxss 设置宽高
+#### 3. wxss 设置宽高 
+***注意，容器container一定要设置高度height值***
 ```css
+.container {
+  height: 500rpx;
+}
+
 .f2-chart {
   width: 100%;
   height: 500rpx;
